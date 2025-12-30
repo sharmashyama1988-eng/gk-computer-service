@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GK Computer Service | Custom PC Builds</title>
+  <meta name="description" content="GK Computer Service in Mohan Garden, New Delhi. Expert custom PC builds, computer repair, upgrades, and IT services. Order your dream PC directly via WhatsApp." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/avatar.jpg" alt="GK Computer Service Logo" class="logo-img" />
+      <span>GK Computer Service</span>
+    </div>
+    <nav id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#order">Order</a>
+      <a href="#location">Location</a>
+      <a href="https://wa.me/919716552036" target="_blank">WhatsApp</a>
+    </nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>Your Dream PC, Built Today</h1>
+      <p>Custom builds, expert repair, guaranteed performance.</p>
+      <a class="btn" href="#order">Build My PC</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section bg-shop">
+    <div class="overlay-dark">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Custom PC builds for gaming, editing, office, and study.</li>
+        <li>Computer repair and diagnostics.</li>
+        <li>Hardware upgrades: RAM, SSD, GPU, PSU, cooling.</li>
+        <li>Software installation and driver setup.</li>
+        <li>Maintenance: cleaning, thermal paste, BIOS updates.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Order Form -->
+  <section id="order" class="section bg-editing">
+    <div class="overlay-light">
+      <h2>Order Form</h2>
+      <form class="form" onsubmit="sendWhatsApp(event)">
+        <input id="name" type="text" placeholder="Your Name" required>
+        <input id="budget" type="number" placeholder="Budget (₹)" required>
+        <select id="usecase" required>
+          <option value="">Select Use Case</option>
+          <option>Gaming</option>
+          <option>Editing</option>
+          <option>Office</option>
+        </select>
+        <textarea id="specs" placeholder="Specifications (CPU, GPU, RAM...)" required></textarea>
+        <input id="contact" type="tel" placeholder="Contact Number" required>
+        <button class="btn" type="submit">Order Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location" class="section">
+    <h2>Our Location</h2>
+    <iframe class="map"
+      src="https://www.google.com/maps?q=GK%20COMPUTER%20SERVICE%20Sanik%20Enclave%2045/2%20Gandhi%20Chowk%20Block%20R%20Mohan%20Garden%20Razapur%20Khurd%20New%20Delhi%20110059&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    © <span id="year"></span> GK Computer Service • Mohan Garden, New Delhi • Call/WhatsApp: +91 97165 52036
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
