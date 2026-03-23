@@ -20,17 +20,17 @@
     --border: rgba(0,229,255,0.12);
     --glow: 0 0 20px rgba(0,229,255,0.3);
   }
-
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
+ 
   body {
     font-family: 'Rajdhani', sans-serif;
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
   }
-
+ 
   body::before {
     content: '';
     position: fixed;
@@ -42,7 +42,7 @@
     pointer-events: none;
     z-index: 9999;
   }
-
+ 
   /* HEADER */
   header {
     position: fixed;
@@ -57,14 +57,14 @@
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
-
+ 
   .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
   }
-
+ 
   .logo-icon {
     width: 38px; height: 38px;
     background: var(--cyan);
@@ -75,7 +75,7 @@
     color: var(--bg);
     flex-shrink: 0;
   }
-
+ 
   .logo-text {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 22px;
@@ -83,9 +83,9 @@
     color: #fff;
   }
   .logo-text span { color: var(--cyan); }
-
+ 
   nav { display: flex; gap: 2rem; align-items: center; }
-
+ 
   nav a {
     font-family: 'Share Tech Mono', monospace;
     font-size: 13px;
@@ -96,7 +96,7 @@
     transition: color 0.2s;
     position: relative;
   }
-
+ 
   nav a::after {
     content: '';
     position: absolute;
@@ -106,10 +106,10 @@
     transform: scaleX(0);
     transition: transform 0.2s;
   }
-
+ 
   nav a:hover { color: var(--cyan); }
   nav a:hover::after { transform: scaleX(1); }
-
+ 
   .nav-wa {
     background: #25D366 !important;
     color: #fff !important;
@@ -121,10 +121,10 @@
     letter-spacing: 1px;
     transition: background 0.2s, box-shadow 0.2s;
   }
-
+ 
   .nav-wa::after { display: none !important; }
   .nav-wa:hover { background: #1db954 !important; box-shadow: 0 0 16px rgba(37,211,102,0.4); }
-
+ 
   .menu-toggle {
     display: none;
     background: none;
@@ -135,7 +135,7 @@
     border-radius: 4px;
     cursor: pointer;
   }
-
+ 
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -145,7 +145,7 @@
     padding: 120px 3rem 80px;
     overflow: hidden;
   }
-
+ 
   .hero-bg {
     position: absolute;
     inset: 0;
@@ -154,7 +154,7 @@
       radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,107,53,0.05) 0%, transparent 60%),
       linear-gradient(135deg, #050a0f 0%, #0a1520 100%);
   }
-
+ 
   .hero-bg::before {
     content: '';
     position: absolute;
@@ -164,13 +164,13 @@
       linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   }
-
+ 
   .hero-content {
     position: relative;
     z-index: 1;
     max-width: 680px;
   }
-
+ 
   .hero-tag {
     font-family: 'Share Tech Mono', monospace;
     font-size: 12px;
@@ -183,14 +183,14 @@
     gap: 10px;
     animation: fadeUp 0.6s ease both;
   }
-
+ 
   .hero-tag::before {
     content: '';
     display: inline-block;
     width: 30px; height: 1px;
     background: var(--cyan);
   }
-
+ 
   .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(52px, 8vw, 96px);
@@ -199,10 +199,10 @@
     letter-spacing: 2px;
     animation: fadeUp 0.6s 0.1s ease both;
   }
-
+ 
   .hero h1 .ac { color: var(--cyan); }
   .hero h1 .ac2 { color: var(--orange); }
-
+ 
   .hero-sub {
     margin-top: 1.5rem;
     font-size: 18px;
@@ -212,7 +212,7 @@
     max-width: 480px;
     animation: fadeUp 0.6s 0.2s ease both;
   }
-
+ 
   .hero-cta {
     margin-top: 2.5rem;
     display: flex;
@@ -220,7 +220,7 @@
     flex-wrap: wrap;
     animation: fadeUp 0.6s 0.3s ease both;
   }
-
+ 
   .btn-primary {
     background: var(--cyan);
     color: var(--bg);
@@ -234,12 +234,12 @@
     cursor: pointer;
     transition: box-shadow 0.2s, transform 0.2s;
   }
-
+ 
   .btn-primary:hover {
     box-shadow: var(--glow);
     transform: translateY(-2px);
   }
-
+ 
   .btn-outline {
     background: transparent;
     color: var(--text);
@@ -253,12 +253,12 @@
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s;
   }
-
+ 
   .btn-outline:hover {
     border-color: var(--cyan);
     color: var(--cyan);
   }
-
+ 
   .hero-visual {
     position: absolute;
     right: 5%;
@@ -267,12 +267,12 @@
     width: min(380px, 38vw);
     animation: float 4s ease-in-out infinite, fadeUp 0.8s 0.4s ease both;
   }
-
+ 
   @keyframes float {
     0%, 100% { transform: translateY(calc(-50% + 0px)); }
     50% { transform: translateY(calc(-50% - 16px)); }
   }
-
+ 
   .pc-tower {
     width: 100%;
     aspect-ratio: 3/4;
@@ -283,7 +283,7 @@
     overflow: hidden;
     box-shadow: 0 0 60px rgba(0,229,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
   }
-
+ 
   .pc-tower::before {
     content: 'GK';
     position: absolute;
@@ -294,7 +294,7 @@
     color: rgba(0,229,255,0.06);
     letter-spacing: 6px;
   }
-
+ 
   .pc-stripe {
     position: absolute;
     left: 0; right: 0;
@@ -302,12 +302,12 @@
     background: linear-gradient(90deg, transparent, var(--cyan), transparent);
     animation: scan 3s linear infinite;
   }
-
+ 
   @keyframes scan {
     from { top: 0; opacity: 1; }
     to { top: 100%; opacity: 0.2; }
   }
-
+ 
   .pc-dots {
     position: absolute;
     bottom: 20px;
@@ -316,7 +316,7 @@
     grid-template-columns: repeat(3, 8px);
     gap: 5px;
   }
-
+ 
   .pc-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
@@ -324,18 +324,18 @@
     opacity: 0.3;
     animation: blink 2s ease-in-out infinite;
   }
-
+ 
   .pc-dot:nth-child(2) { animation-delay: 0.3s; }
   .pc-dot:nth-child(3) { animation-delay: 0.6s; }
   .pc-dot:nth-child(4) { animation-delay: 0.9s; }
   .pc-dot:nth-child(5) { animation-delay: 1.2s; }
   .pc-dot:nth-child(6) { animation-delay: 1.5s; }
-
+ 
   @keyframes blink {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; box-shadow: 0 0 6px var(--cyan); }
   }
-
+ 
   /* STATS */
   .stats-bar {
     position: relative;
@@ -348,15 +348,15 @@
     gap: 3rem;
     flex-wrap: wrap;
   }
-
+ 
   .stat { display: flex; align-items: baseline; gap: 8px; }
-
+ 
   .stat-num {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 36px;
     color: var(--cyan);
   }
-
+ 
   .stat-label {
     font-family: 'Share Tech Mono', monospace;
     font-size: 12px;
@@ -364,12 +364,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-
+ 
   /* SECTIONS */
   .section { padding: 100px 3rem; }
-
+ 
   .section-header { margin-bottom: 3rem; }
-
+ 
   .section-tag {
     font-family: 'Share Tech Mono', monospace;
     font-size: 12px;
@@ -381,9 +381,9 @@
     gap: 10px;
     margin-bottom: 0.75rem;
   }
-
+ 
   .section-tag::before { content: '//'; color: var(--orange); }
-
+ 
   .section-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(36px, 5vw, 60px);
@@ -391,10 +391,10 @@
     letter-spacing: 2px;
     line-height: 1;
   }
-
+ 
   /* SERVICES */
   #services { background: var(--bg2); }
-
+ 
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -403,16 +403,16 @@
     border-radius: 8px;
     overflow: hidden;
   }
-
+ 
   .service-card {
     background: var(--card);
     padding: 2rem;
     position: relative;
     transition: background 0.2s;
   }
-
+ 
   .service-card:hover { background: #122030; }
-
+ 
   .service-card::before {
     content: '';
     position: absolute;
@@ -421,11 +421,11 @@
     background: var(--cyan);
     transition: height 0.3s;
   }
-
+ 
   .service-card:hover::before { height: 100%; }
-
+ 
   .service-icon { font-size: 32px; margin-bottom: 1rem; display: block; }
-
+ 
   .service-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 22px;
@@ -433,19 +433,19 @@
     color: #fff;
     margin-bottom: 0.5rem;
   }
-
+ 
   .service-desc { font-size: 15px; color: var(--text-dim); line-height: 1.6; }
-
+ 
   /* ORDER */
   #order { background: var(--bg); }
-
+ 
   .order-layout {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 4rem;
     align-items: start;
   }
-
+ 
   .order-info h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
@@ -453,14 +453,14 @@
     letter-spacing: 2px;
     margin-bottom: 1rem;
   }
-
+ 
   .order-info p {
     color: var(--text-dim);
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 2rem;
   }
-
+ 
   .contact-item {
     display: flex;
     align-items: center;
@@ -471,7 +471,7 @@
     font-weight: 600;
     color: var(--text);
   }
-
+ 
   .contact-item span:first-child {
     font-family: 'Share Tech Mono', monospace;
     color: var(--cyan);
@@ -479,14 +479,14 @@
     width: 28px;
     text-align: center;
   }
-
+ 
   .form-panel {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 2.5rem;
   }
-
+ 
   .form-panel h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
@@ -494,21 +494,21 @@
     color: #fff;
     margin-bottom: 2rem;
   }
-
+ 
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-bottom: 0;
   }
-
+ 
   .form-group {
     display: flex;
     flex-direction: column;
     gap: 6px;
     margin-bottom: 1rem;
   }
-
+ 
   label {
     font-family: 'Share Tech Mono', monospace;
     font-size: 11px;
@@ -516,7 +516,7 @@
     color: var(--text-dim);
     text-transform: uppercase;
   }
-
+ 
   input, select, textarea {
     background: rgba(0,229,255,0.03);
     border: 1px solid var(--border);
@@ -530,15 +530,15 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
   }
-
+ 
   input:focus, select:focus, textarea:focus {
     border-color: var(--cyan);
     box-shadow: 0 0 0 2px rgba(0,229,255,0.08);
   }
-
+ 
   select option { background: var(--bg2); }
   textarea { resize: vertical; min-height: 100px; }
-
+ 
   .btn-submit {
     width: 100%;
     background: var(--cyan);
@@ -553,29 +553,29 @@
     transition: box-shadow 0.2s, transform 0.2s;
     margin-top: 0.5rem;
   }
-
+ 
   .btn-submit:hover {
     box-shadow: var(--glow);
     transform: translateY(-2px);
   }
-
+ 
   /* LOCATION */
   #location { background: var(--bg2); }
-
+ 
   .map-container {
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 0 0 40px rgba(0,229,255,0.05);
   }
-
+ 
   .map-container iframe {
     width: 100%;
     height: 420px;
     display: block;
     filter: invert(90%) hue-rotate(180deg);
   }
-
+ 
   /* FOOTER */
   footer {
     background: var(--bg);
@@ -587,27 +587,27 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-
+ 
   .footer-brand {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 18px;
     letter-spacing: 2px;
     color: var(--text-dim);
   }
-
+ 
   .footer-brand span { color: var(--cyan); }
-
+ 
   .footer-copy {
     font-family: 'Share Tech Mono', monospace;
     font-size: 12px;
     color: var(--text-dim);
   }
-
+ 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
+ 
   /* MOBILE */
   @media (max-width: 768px) {
     header { padding: 0 1.5rem; }
@@ -635,7 +635,7 @@
 </style>
 </head>
 <body>
-
+ 
 <header>
   <a href="#" class="logo">
     <div class="logo-icon">GK</div>
@@ -649,7 +649,7 @@
   </nav>
   <button class="menu-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
 </header>
-
+ 
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -665,7 +665,7 @@
       <a href="#services" class="btn-outline">Our Services</a>
     </div>
   </div>
-
+ 
   <div class="hero-visual">
     <div class="pc-tower">
       <div class="pc-stripe"></div>
@@ -676,14 +676,14 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="stats-bar">
   <div class="stat"><span class="stat-num">500+</span><span class="stat-label">PCs Built</span></div>
   <div class="stat"><span class="stat-num">5★</span><span class="stat-label">Rated Service</span></div>
   <div class="stat"><span class="stat-num">24hr</span><span class="stat-label">Turnaround</span></div>
   <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
 </div>
-
+ 
 <section id="services" class="section">
   <div class="section-header">
     <div class="section-tag">What We Do</div>
@@ -722,7 +722,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="order" class="section">
   <div class="section-header">
     <div class="section-tag">Get Started</div>
@@ -745,7 +745,7 @@
         <span>Sainik Enclave, Mohan Garden, New Delhi 110059</span>
       </div>
     </div>
-
+ 
     <div class="form-panel">
       <h3>BUILD REQUEST FORM</h3>
       <form onsubmit="sendWhatsApp(event)">
@@ -786,7 +786,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="location" class="section">
   <div class="section-header">
     <div class="section-tag">Find Us</div>
@@ -799,15 +799,15 @@
     </iframe>
   </div>
 </section>
-
+ 
 <footer>
   <div class="footer-brand">GK <span>COMPUTER</span> SERVICE</div>
   <div class="footer-copy">© <span id="year"></span> GK Computer Service • Mohan Garden, New Delhi</div>
 </footer>
-
+ 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
+ 
   function sendWhatsApp(e) {
     e.preventDefault();
     const name    = document.getElementById('name').value;
@@ -815,7 +815,7 @@
     const usecase = document.getElementById('usecase').value;
     const specs   = document.getElementById('specs').value;
     const contact = document.getElementById('contact').value;
-
+ 
     const msg = `🖥️ *NEW PC BUILD REQUEST*\n\n👤 Name: ${name}\n📞 Contact: ${contact}\n💰 Budget: ₹${budget}\n🎮 Use Case: ${usecase}\n\n📋 Specs/Requirements:\n${specs}\n\n_Sent from GK Computer Service website_`;
     window.open(`https://wa.me/919716552036?text=${encodeURIComponent(msg)}`, '_blank');
   }
