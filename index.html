@@ -1,82 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GK Computer Service | Custom PC Builds</title>
-  <meta name="description" content="GK Computer Service in Mohan Garden, New Delhi. Expert custom PC builds, computer repair, upgrades, and IT services. Order your dream PC directly via WhatsApp." />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GK Computer Service | Custom PC Builds — Mohan Garden, Delhi</title>
+<meta name="description" content="GK Computer Service in Mohan Garden, New Delhi. Expert custom PC builds, computer repair, upgrades, and IT services." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050a0f;
+    --bg2: #0a1520;
+    --cyan: #00e5ff;
+    --cyan2: #00b4cc;
+    --orange: #ff6b35;
+    --text: #c8d8e8;
+    --text-dim: #5a7a8a;
+    --card: #0d1e2e;
+    --border: rgba(0,229,255,0.12);
+    --glow: 0 0 20px rgba(0,229,255,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Rajdhani', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* HEADER */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 70px;
+    background: rgba(5,10,15,0.9);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 38px; height: 38px;
+    background: var(--cyan);
+    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .logo-text span { color: var(--cyan); }
+
+  nav { display: flex; gap: 2rem; align-items: center; }
+
+  nav a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--cyan);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+
+  nav a:hover { color: var(--cyan); }
+  nav a:hover::after { transform: scaleX(1); }
+
+  .nav-wa {
+    background: #25D366 !important;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .nav-wa::after { display: none !important; }
+  .nav-wa:hover { background: #1db954 !important; box-shadow: 0 0 16px rgba(37,211,102,0.4); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--cyan);
+    font-size: 20px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 120px 3rem 80px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(0,229,255,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,107,53,0.05) 0%, transparent 60%),
+      linear-gradient(135deg, #050a0f 0%, #0a1520 100%);
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+
+  .hero-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--cyan);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 30px; height: 1px;
+    background: var(--cyan);
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.95;
+    color: #fff;
+    letter-spacing: 2px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 .ac { color: var(--cyan); }
+  .hero h1 .ac2 { color: var(--orange); }
+
+  .hero-sub {
+    margin-top: 1.5rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 480px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--cyan);
+    color: var(--bg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 14px 36px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+  }
+
+  .hero-visual {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(380px, 38vw);
+    animation: float 4s ease-in-out infinite, fadeUp 0.8s 0.4s ease both;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(calc(-50% + 0px)); }
+    50% { transform: translateY(calc(-50% - 16px)); }
+  }
+
+  .pc-tower {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(145deg, #0d1e30, #081218);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0,229,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  .pc-tower::before {
+    content: 'GK';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: rgba(0,229,255,0.06);
+    letter-spacing: 6px;
+  }
+
+  .pc-stripe {
+    position: absolute;
+    left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    from { top: 0; opacity: 1; }
+    to { top: 100%; opacity: 0.2; }
+  }
+
+  .pc-dots {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 8px);
+    gap: 5px;
+  }
+
+  .pc-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--cyan);
+    opacity: 0.3;
+    animation: blink 2s ease-in-out infinite;
+  }
+
+  .pc-dot:nth-child(2) { animation-delay: 0.3s; }
+  .pc-dot:nth-child(3) { animation-delay: 0.6s; }
+  .pc-dot:nth-child(4) { animation-delay: 0.9s; }
+  .pc-dot:nth-child(5) { animation-delay: 1.2s; }
+  .pc-dot:nth-child(6) { animation-delay: 1.5s; }
+
+  @keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; box-shadow: 0 0 6px var(--cyan); }
+  }
+
+  /* STATS */
+  .stats-bar {
+    position: relative;
+    z-index: 1;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 3rem;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .stat { display: flex; align-items: baseline; gap: 8px; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--cyan);
+  }
+
+  .stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* SECTIONS */
+  .section { padding: 100px 3rem; }
+
+  .section-header { margin-bottom: 3rem; }
+
+  .section-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--cyan);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-tag::before { content: '//'; color: var(--orange); }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  /* SERVICES */
+  #services { background: var(--bg2); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--card);
+    padding: 2rem;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .service-card:hover { background: #122030; }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--cyan);
+    transition: height 0.3s;
+  }
+
+  .service-card:hover::before { height: 100%; }
+
+  .service-icon { font-size: 32px; margin-bottom: 1rem; display: block; }
+
+  .service-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc { font-size: 15px; color: var(--text-dim); line-height: 1.6; }
+
+  /* ORDER */
+  #order { background: var(--bg); }
+
+  .order-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .order-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--cyan);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .order-info p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .contact-item span:first-child {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--cyan);
+    font-size: 16px;
+    width: 28px;
+    text-align: center;
+  }
+
+  .form-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2.5rem;
+  }
+
+  .form-panel h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  input, select, textarea {
+    background: rgba(0,229,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 2px rgba(0,229,255,0.08);
+  }
+
+  select option { background: var(--bg2); }
+  textarea { resize: vertical; min-height: 100px; }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--cyan);
+    color: var(--bg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit:hover {
+    box-shadow: var(--glow);
+    transform: translateY(-2px);
+  }
+
+  /* LOCATION */
+  #location { background: var(--bg2); }
+
+  .map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 40px rgba(0,229,255,0.05);
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 420px;
+    display: block;
+    filter: invert(90%) hue-rotate(180deg);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+  }
+
+  .footer-brand span { color: var(--cyan); }
+
+  .footer-copy {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    header { padding: 0 1.5rem; }
+    nav { display: none; }
+    nav.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: rgba(5,10,15,0.98);
+      padding: 2rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+    }
+    .menu-toggle { display: block; }
+    .hero { padding: 120px 1.5rem 60px; }
+    .hero-visual { display: none; }
+    .stats-bar { padding: 1.5rem; gap: 1.5rem; }
+    .section { padding: 70px 1.5rem; }
+    .order-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="images/avatar.jpg" alt="GK Computer Service Logo" class="logo-img" />
-      <span>GK Computer Service</span>
-    </div>
-    <nav id="nav-links">
-      <a href="#services">Services</a>
-      <a href="#order">Order</a>
-      <a href="#location">Location</a>
-      <a href="https://wa.me/919716552036" target="_blank">WhatsApp</a>
-    </nav>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="overlay">
-      <h1>Your Dream PC, Built Today</h1>
-      <p>Custom builds, expert repair, guaranteed performance.</p>
-      <a class="btn" href="#order">Build My PC</a>
-    </div>
-  </section>
+<header>
+  <a href="#" class="logo">
+    <div class="logo-icon">GK</div>
+    <span class="logo-text">GK <span>COMPUTER</span></span>
+  </a>
+  <nav id="nav-links">
+    <a href="#services">Services</a>
+    <a href="#order">Order</a>
+    <a href="#location">Location</a>
+    <a href="https://wa.me/919716552036" target="_blank" class="nav-wa">📲 WhatsApp</a>
+  </nav>
+  <button class="menu-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+</header>
 
-  <!-- Services -->
-  <section id="services" class="section bg-shop">
-    <div class="overlay-dark">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Custom PC builds for gaming, editing, office, and study.</li>
-        <li>Computer repair and diagnostics.</li>
-        <li>Hardware upgrades: RAM, SSD, GPU, PSU, cooling.</li>
-        <li>Software installation and driver setup.</li>
-        <li>Maintenance: cleaning, thermal paste, BIOS updates.</li>
-      </ul>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Mohan Garden, New Delhi</div>
+    <h1>
+      YOUR DREAM<br>
+      <span class="ac">PC</span> BUILT<br>
+      <span class="ac2">TODAY</span>
+    </h1>
+    <p class="hero-sub">Custom gaming rigs, expert repairs, hardware upgrades — delivered with precision by Delhi's trusted PC specialists.</p>
+    <div class="hero-cta">
+      <a href="#order" class="btn-primary">Build My PC →</a>
+      <a href="#services" class="btn-outline">Our Services</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Order Form -->
-  <section id="order" class="section bg-editing">
-    <div class="overlay-light">
-      <h2>Order Form</h2>
-      <form class="form" onsubmit="sendWhatsApp(event)">
-        <input id="name" type="text" placeholder="Your Name" required>
-        <input id="budget" type="number" placeholder="Budget (₹)" required>
-        <select id="usecase" required>
-          <option value="">Select Use Case</option>
-          <option>Gaming</option>
-          <option>Editing</option>
-          <option>Office</option>
-        </select>
-        <textarea id="specs" placeholder="Specifications (CPU, GPU, RAM...)" required></textarea>
-        <input id="contact" type="tel" placeholder="Contact Number" required>
-        <button class="btn" type="submit">Order Now</button>
+  <div class="hero-visual">
+    <div class="pc-tower">
+      <div class="pc-stripe"></div>
+      <div class="pc-dots">
+        <div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div>
+        <div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">500+</span><span class="stat-label">PCs Built</span></div>
+  <div class="stat"><span class="stat-num">5★</span><span class="stat-label">Rated Service</span></div>
+  <div class="stat"><span class="stat-num">24hr</span><span class="stat-label">Turnaround</span></div>
+  <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
+</div>
+
+<section id="services" class="section">
+  <div class="section-header">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">OUR SERVICES</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🖥️</span>
+      <div class="service-title">Custom PC Builds</div>
+      <p class="service-desc">Gaming, video editing, office &amp; study builds. We source the best components within your budget.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔧</span>
+      <div class="service-title">Repair &amp; Diagnostics</div>
+      <p class="service-desc">Fast troubleshooting and repair for all PC issues — hardware failures, crashes, overheating.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚡</span>
+      <div class="service-title">Hardware Upgrades</div>
+      <p class="service-desc">RAM, SSD, GPU, PSU, cooling solutions — maximize your existing system's performance.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💿</span>
+      <div class="service-title">Software Setup</div>
+      <p class="service-desc">OS installation, driver setup, antivirus, and complete software configuration.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🧹</span>
+      <div class="service-title">Maintenance</div>
+      <p class="service-desc">Deep cleaning, thermal paste replacement, BIOS updates to keep your PC running cool.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📲</span>
+      <div class="service-title">WhatsApp Ordering</div>
+      <p class="service-desc">Place your PC build order instantly via WhatsApp. Quick quotes, real-time updates.</p>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="section">
+  <div class="section-header">
+    <div class="section-tag">Get Started</div>
+    <h2 class="section-title">ORDER YOUR PC</h2>
+  </div>
+  <div class="order-layout">
+    <div class="order-info">
+      <h3>Why Choose GK?</h3>
+      <p>We hand-pick every component, test every build, and deliver PCs that perform beyond expectations. Located in Mohan Garden, we serve all of Delhi NCR.</p>
+      <div class="contact-item">
+        <span>📞</span>
+        <span><a href="tel:+919716552036" style="color:inherit;text-decoration:none;">+91 97165 52036</a></span>
+      </div>
+      <div class="contact-item">
+        <span>💬</span>
+        <span><a href="https://wa.me/919716552036" target="_blank" style="color:var(--cyan);text-decoration:none;">WhatsApp Direct</a></span>
+      </div>
+      <div class="contact-item">
+        <span>📍</span>
+        <span>Sainik Enclave, Mohan Garden, New Delhi 110059</span>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <h3>BUILD REQUEST FORM</h3>
+      <form onsubmit="sendWhatsApp(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input id="name" type="text" placeholder="Rahul Sharma" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Number</label>
+            <input id="contact" type="tel" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Budget (₹)</label>
+            <input id="budget" type="number" placeholder="50000" required>
+          </div>
+          <div class="form-group">
+            <label>Use Case</label>
+            <select id="usecase" required>
+              <option value="">Select...</option>
+              <option>Gaming</option>
+              <option>Video Editing</option>
+              <option>Office Work</option>
+              <option>Study</option>
+              <option>Streaming</option>
+              <option>3D / Design</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Specifications / Requirements</label>
+          <textarea id="specs" placeholder="CPU preference, GPU, RAM, storage, monitor needed, etc." required></textarea>
+        </div>
+        <button class="btn-submit" type="submit">SEND ORDER VIA WHATSAPP ↗</button>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Location -->
-  <section id="location" class="section">
-    <h2>Our Location</h2>
-    <iframe class="map"
-      src="https://www.google.com/maps?q=GK%20COMPUTER%20SERVICE%20Sanik%20Enclave%2045/2%20Gandhi%20Chowk%20Block%20R%20Mohan%20Garden%20Razapur%20Khurd%20New%20Delhi%20110059&output=embed"
-      allowfullscreen loading="lazy"></iframe>
-  </section>
+<section id="location" class="section">
+  <div class="section-header">
+    <div class="section-tag">Find Us</div>
+    <h2 class="section-title">OUR LOCATION</h2>
+  </div>
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps?q=GK+COMPUTER+SERVICE+Sanik+Enclave+45/2+Gandhi+Chowk+Block+R+Mohan+Garden+Razapur+Khurd+New+Delhi+110059&output=embed"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
 
-  <footer>
-    © <span id="year"></span> GK Computer Service • Mohan Garden, New Delhi • Call/WhatsApp: +91 97165 52036
-  </footer>
+<footer>
+  <div class="footer-brand">GK <span>COMPUTER</span> SERVICE</div>
+  <div class="footer-copy">© <span id="year"></span> GK Computer Service • Mohan Garden, New Delhi</div>
+</footer>
 
-  <script src="script.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function sendWhatsApp(e) {
+    e.preventDefault();
+    const name    = document.getElementById('name').value;
+    const budget  = document.getElementById('budget').value;
+    const usecase = document.getElementById('usecase').value;
+    const specs   = document.getElementById('specs').value;
+    const contact = document.getElementById('contact').value;
+
+    const msg = `🖥️ *NEW PC BUILD REQUEST*\n\n👤 Name: ${name}\n📞 Contact: ${contact}\n💰 Budget: ₹${budget}\n🎮 Use Case: ${usecase}\n\n📋 Specs/Requirements:\n${specs}\n\n_Sent from GK Computer Service website_`;
+    window.open(`https://wa.me/919716552036?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+</script>
 </body>
 </html>
